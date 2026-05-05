@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>UTP - Iniciar Sesión</title>
+<!-- Fonts & Icons -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-low": "#f3f3f4",
+                        "on-secondary-container": "#646464",
+                        "on-primary-container": "#ffe7e8",
+                        "on-secondary-fixed-variant": "#474747",
+                        "inverse-primary": "#ffb2b8",
+                        "primary-fixed": "#ffdadb",
+                        "outline": "#8f6f71",
+                        "on-background": "#1a1c1c",
+                        "inverse-on-surface": "#f0f1f1",
+                        "error": "#ba1a1a",
+                        "surface-dim": "#dadada",
+                        "background": "#f9f9f9",
+                        "surface-container": "#eeeeee",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "on-tertiary-container": "#eceded",
+                        "primary": "#a80035",
+                        "secondary-fixed-dim": "#c6c6c6",
+                        "on-secondary-fixed": "#1b1b1b",
+                        "tertiary-container": "#6a6b6b",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "secondary": "#5e5e5e",
+                        "primary-fixed-dim": "#ffb2b8",
+                        "outline-variant": "#e3bdbf",
+                        "secondary-fixed": "#e2e2e2",
+                        "surface-container-highest": "#e2e2e2",
+                        "on-surface-variant": "#5b4042",
+                        "on-primary-fixed": "#40000f",
+                        "on-surface": "#1a1c1c",
+                        "on-error-container": "#93000a",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "tertiary": "#515353",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "surface-container-high": "#e8e8e8",
+                        "surface-variant": "#e2e2e2",
+                        "secondary-container": "#e2e2e2",
+                        "primary-container": "#d01a49",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed": "#e2e2e2",
+                        "surface-tint": "#be003e",
+                        "on-primary-fixed-variant": "#91002d",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "surface-bright": "#f9f9f9",
+                        "surface": "#f9f9f9",
+                        "inverse-surface": "#2f3131"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "container-max": "1200px",
+                        "section-gap": "40px",
+                        "auth-card-width": "440px",
+                        "gutter": "24px",
+                        "stack-gap": "16px",
+                        "margin-page": "32px",
+                        "unit": "4px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Public Sans"],
+                        "label-sm": ["Public Sans"],
+                        "body-lg": ["Public Sans"],
+                        "body-md": ["Public Sans"],
+                        "headline-lg": ["Public Sans"],
+                        "label-md": ["Public Sans"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "label-sm": ["12px", {"lineHeight": "1", "fontWeight": "500"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "label-md": ["14px", {"lineHeight": "1", "letterSpacing": "0.01em", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Public Sans', sans-serif;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen text-on-surface">
+<!-- TopAppBar -->
+<header class="bg-surface dark:bg-surface border-b border-outline-variant dark:border-outline fixed top-0 w-full z-50">
+<div class="flex justify-between items-center w-full px-margin-page py-4 max-w-container-max mx-auto">
+<div class="flex items-center gap-2">
+<img alt="UTP Logo" class="h-10 md:h-12" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAd1UgQeAyM9VpQaynUiWKL4BLXPe84VXp8NRcsvdxMyZHovTEuhYTw06NeL6nJnY7QIh0KQ6OEbFvXdtxWDVAZsJph4ky5CgYKiSrfS63uduO-CcFTqNzG6a8aTzr-Ki8TANe5olThmooo0CwC9mU6_qJmZozZK2AuHSbkFMJsI_DcAL1qJCV5hNgjPW6G_SMqmzVpu4y9_-2OJ9ciQP8Ofyx7KmVNK4YBhidfJqkqoxLsg8OLqJCoH29r2-DYUMsSmgiF1u0hrtE"/>
+</div>
+<div class="flex items-center gap-stack-gap">
+<button class="material-symbols-outlined text-on-surface-variant hover:bg-surface-container-low transition-colors p-2 rounded-full" data-icon="help_outline">help_outline</button>
+</div>
+</div>
+</header>
+<!-- Main Content: Login Canvas -->
+<main class="flex-grow flex items-center justify-center pt-24 pb-12 px-gutter">
+<div class="w-full max-w-auth-card-width bg-surface-container-lowest border border-outline-variant rounded-xl shadow-lg overflow-hidden">
+<!-- Header section of the card -->
+<div class="p-8 pb-0 text-center">
+<div class="flex justify-center mb-6">
+<img alt="UTP" class="h-14" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJpqeHwROm_HsAAYXlsCvUclXKTR_J8jNY6hh4tiAWw2HtK3g5lmhcqPEBJzuw-lW8ct7pFVqfwkM2gCEtwSad-xTdYpv58rCQcJ86OhOPICTeqRZYWCgpkDF_da85ZFVPhuqZ4gOitnV6US-Z80PcWLIUuEhjO3Vl7VmVeLC8Cl2QIwyesobY1VwT9iPhxLVTgAsRE0Wd5r0JZZaFYQdl-XDi2nGQvyBIOcIRqCY5BFelt7GLbJDAlZncvzDN8ZAyNsQTLsyRGH8"/>
+</div>
+<h1 class="text-headline-md font-headline-md text-on-surface mb-2">Iniciar Sesión</h1>
+<p class="text-body-md font-body-md text-on-surface-variant">Portal Universitario</p>
+</div>
+<!-- Main Form Section -->
+<div class="p-8">
+<!-- Email Login Form -->
+<form class="flex flex-col gap-5">
+<div class="flex flex-col gap-2">
+<label class="font-label-md text-label-md text-on-surface-variant">Correo institucional</label>
+<input class="w-full px-4 py-3 bg-surface-container-low border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary/20 transition-colors rounded-lg font-body-md text-body-md placeholder:text-on-surface-variant/40 border-slate-200" placeholder="ejemplo@utp.edu.pe" type="email"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-label-md text-label-md text-on-surface-variant">Contraseña</label>
+<input class="w-full px-4 py-3 bg-surface-container-low border border-outline-variant focus:border-primary focus:ring-1 focus:ring-primary/20 transition-colors rounded-lg font-body-md text-body-md placeholder:text-on-surface-variant/40 border-slate-200" placeholder="••••••••" type="password"/>
+</div>
+<div class="flex justify-end -mt-1">
+<a class="text-label-md font-label-md text-primary hover:underline transition-all" href="#">¿Olvidaste tu contraseña?</a>
+</div>
+<button class="w-full bg-[#D01A49] text-white font-bold py-4 rounded-lg shadow-sm hover:bg-[#b0163e] transition-all mt-4 font-label-md text-label-md uppercase tracking-wider" type="submit">
+                        Ingresar
+                    </button>
+</form>
+<div class="mt-8 text-center">
+<p class="text-body-md font-body-md text-on-surface-variant">
+                        ¿No tienes una cuenta? <a class="text-primary font-bold hover:underline" href="#">Regístrate aquí</a>
+</p>
+</div>
+<!-- Divider -->
+<div class="flex items-center gap-4 my-8">
+<div class="flex-grow h-px bg-outline-variant"></div>
+<span class="text-label-sm font-label-sm text-on-surface-variant whitespace-nowrap">o continúa con</span>
+<div class="flex-grow h-px bg-outline-variant"></div>
+</div>
+<!-- Social Login Cluster -->
+<div class="flex flex-col gap-3">
+<button class="w-full flex items-center justify-center gap-3 py-3 border border-outline-variant rounded-lg font-label-md text-label-md text-on-surface hover:bg-surface-container-low transition-all">
+<img alt="Google" class="w-5 h-5" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAB7L6Y7rHuOVJPCZMzRwLzekmmixrxdXX1_hnj7_71kdD1ep2sA_zoIwVDoxBQ4f2osj8SgIpuF5JOs2rV9eGrTPLPv1NXbMEAQ1g3uz6KqM6O2xcD3UbN5PKFTrzaQzSCIRex1t6cZpDJ8gM43tO36oFMPO2khIClf_FYARf7DhFh3iC9yDdQ36raFTOiIjOX_JZJn1YGKH2Uy-O8X2st_R9dRjIE5Df9FM4OVhbBbP765FppxMsrsqGld4csOUpwSY7a8b82Wuc"/>
+<span>Google</span>
+</button>
+<div class="grid grid-cols-2 gap-3">
+<button class="flex items-center justify-center gap-3 py-3 border border-outline-variant rounded-lg font-label-md text-label-md text-on-surface hover:bg-surface-container-low transition-all">
+<img alt="GitHub" class="w-5 h-5" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJXwcCllBC5KmeHfDZnxwam7h3McmQj6g-JUCjhDOmqY4xqho4i11qFJY48YcbT5dtEB2-DBOWgBmEn9kw71CMNKaX73-Cqykfs01d8na7UZr-Y7-KCvoHkDCfDWHKqHBt1vdzxk3UawUUlwZB-2EF11HboatyNB0v3hDUJebA888Vlb9fE8IMQgRBsDeWZ8zQxr_4eR24TDa9xgxDYVxNz1-zxCbv_IsuF7FvhaHCzNF2vS2fR87h9zGhi2hDcZVh48QLxEHe5UU"/>
+<span>GitHub</span>
+</button>
+<button class="flex items-center justify-center gap-3 py-3 border border-outline-variant rounded-lg font-label-md text-label-md text-on-surface hover:bg-surface-container-low transition-all">
+<img alt="Facebook" class="w-5 h-5" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCf5lTaK14Qd89PTD4ygGKU9O0jNHrapem39OrW7cyO6heWut3zZYz_0iRM06e7n5BJHlCTVULfGFk4XfG0mXIDy3vBC8QTknhrS-9R4XZKdz7QUC3lVD7iLJ0Futguy525dR6D37NdsajVXEwC4ZAkvvGkmwAKtvZC57s8nboBl1ZwLbajJZiD7Wm17rsm53Y6JnuQZwDweIwEGWJQDCwLx9nurAW6tE3uus60_oleXML7cCrp0e345T1jIimrf8jvd0Vl4-z7oxk"/>
+<span>Facebook</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-[#2F3131] w-full py-10 px-margin-page flex flex-col md:flex-row justify-between items-center gap-stack-gap border-t border-outline-variant">
+<div class="flex flex-col gap-2">
+<span class="font-headline-md text-headline-md text-on-tertiary">UTP</span>
+<p class="font-body-md text-body-md text-white/80 max-w-sm">© 2024 Universidad Tecnológica del Perú. Todos los derechos reservados.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-x-6 gap-y-2">
+<a class="font-label-sm text-label-sm text-on-tertiary-container dark:text-tertiary-fixed-dim hover:text-on-tertiary transition-all" href="#">Privacidad</a>
+<a class="font-label-sm text-label-sm text-on-tertiary-container dark:text-tertiary-fixed-dim hover:text-on-tertiary transition-all" href="#">Términos y Condiciones</a>
+<a class="font-label-sm text-label-sm text-on-tertiary-container dark:text-tertiary-fixed-dim hover:text-on-tertiary transition-all" href="#">Libro de Reclamaciones</a>
+<a class="font-label-sm text-label-sm text-on-tertiary-container dark:text-tertiary-fixed-dim hover:text-on-tertiary transition-all" href="#">Soporte Técnico</a>
+</div>
+</footer>
+</body></html>
